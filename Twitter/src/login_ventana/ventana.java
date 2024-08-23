@@ -33,14 +33,15 @@ public class ventana extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         boton_login = new javax.swing.JButton();
         textoContraseña = new javax.swing.JPasswordField();
+        btn_cuentaNueva = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lbusuario.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        lbusuario.setText("usuario");
+        lbusuario.setText("usuario:");
 
         lbcontraseña.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        lbcontraseña.setText("contraseña");
+        lbcontraseña.setText("contraseña:");
 
         textoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,8 +51,10 @@ public class ventana extends javax.swing.JFrame {
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo_twitter/twitter.png"))); // NOI18N
 
+        boton_login.setBackground(new java.awt.Color(88, 167, 246));
         boton_login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        boton_login.setText("login");
+        boton_login.setForeground(new java.awt.Color(0, 0, 0));
+        boton_login.setText("log in");
         boton_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_loginActionPerformed(evt);
@@ -64,6 +67,16 @@ public class ventana extends javax.swing.JFrame {
             }
         });
 
+        btn_cuentaNueva.setBackground(new java.awt.Color(108, 176, 245));
+        btn_cuentaNueva.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        btn_cuentaNueva.setForeground(new java.awt.Color(0, 0, 0));
+        btn_cuentaNueva.setText("no tienes cuenta?");
+        btn_cuentaNueva.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_cuentaNuevaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -71,21 +84,24 @@ public class ventana extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbusuario)
-                            .addComponent(lbcontraseña)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(163, 163, 163)
+                        .addComponent(boton_login))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(btn_cuentaNueva))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(boton_login)
-                                .addGap(25, 25, 25)))))
+                            .addComponent(textoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbcontraseña)
+                            .addComponent(lbusuario))))
                 .addContainerGap(83, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -93,17 +109,19 @@ public class ventana extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(41, 41, 41)
                 .addComponent(lbusuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(textoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(22, 22, 22)
                 .addComponent(lbcontraseña)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(textoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(29, 29, 29)
                 .addComponent(boton_login)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_cuentaNueva)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -134,8 +152,16 @@ public class ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_boton_loginActionPerformed
 
+    private void btn_cuentaNuevaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cuentaNuevaMouseClicked
+        V_NuevaCuenta V_NC=new V_NuevaCuenta();
+        V_NC.setVisible(true);
+        V_NC.setLocationRelativeTo(null);
+        V_NC.setDefaultCloseOperation(2);
+    }//GEN-LAST:event_btn_cuentaNuevaMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_login;
+    private javax.swing.JButton btn_cuentaNueva;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbcontraseña;
     private javax.swing.JLabel lbusuario;

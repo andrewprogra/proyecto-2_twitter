@@ -14,6 +14,7 @@ public class main extends JFrame {
        v1.setVisible(true);//las ventanas son invisibles, este comadno es para hacerlas visibles
        v1.setLocationRelativeTo(null);//al ejecutarla nos aparesca en el centro 
         
+       
    
     }
     
