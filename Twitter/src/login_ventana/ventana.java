@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package login_ventana;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author carlo
@@ -32,7 +32,7 @@ public class ventana extends javax.swing.JFrame {
         textoUsuario = new javax.swing.JTextField();
         logo = new javax.swing.JLabel();
         boton_login = new javax.swing.JButton();
-        textoContraseña = new javax.swing.JPasswordField();
+        textopassword = new javax.swing.JPasswordField();
         btn_cuentaNueva = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,13 +41,7 @@ public class ventana extends javax.swing.JFrame {
         lbusuario.setText("usuario:");
 
         lbcontraseña.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        lbcontraseña.setText("contraseña:");
-
-        textoUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoUsuarioActionPerformed(evt);
-            }
-        });
+        lbcontraseña.setText("Password");
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo_twitter/twitter.png"))); // NOI18N
 
@@ -58,12 +52,6 @@ public class ventana extends javax.swing.JFrame {
         boton_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_loginActionPerformed(evt);
-            }
-        });
-
-        textoContraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoContraseñaActionPerformed(evt);
             }
         });
 
@@ -96,7 +84,7 @@ public class ventana extends javax.swing.JFrame {
                         .addGap(75, 75, 75)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(textoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(textopassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +104,7 @@ public class ventana extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(lbcontraseña)
                 .addGap(18, 18, 18)
-                .addComponent(textoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textopassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(boton_login)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -140,16 +128,10 @@ public class ventana extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoUsuarioActionPerformed
-      
-    }//GEN-LAST:event_textoUsuarioActionPerformed
-
-    private void textoContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoContraseñaActionPerformed
-     
-    }//GEN-LAST:event_textoContraseñaActionPerformed
-
     private void boton_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_loginActionPerformed
-        // TODO add your handling code here:
+      if(textoUsuario.getText().equals("")||textopassword.getText().equals("")){
+      JOptionPane.showMessageDialog(null,"Error,debe de llenar todos los campos");
+      }
     }//GEN-LAST:event_boton_loginActionPerformed
 
     private void btn_cuentaNuevaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cuentaNuevaMouseClicked
@@ -166,7 +148,7 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel lbcontraseña;
     private javax.swing.JLabel lbusuario;
     private javax.swing.JLabel logo;
-    private javax.swing.JPasswordField textoContraseña;
     private javax.swing.JTextField textoUsuario;
+    private javax.swing.JPasswordField textopassword;
     // End of variables declaration//GEN-END:variables
 }

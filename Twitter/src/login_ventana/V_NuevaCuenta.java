@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package login_ventana;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author carlo
@@ -69,6 +69,11 @@ public class V_NuevaCuenta extends javax.swing.JFrame {
         btn_CuentaCreada.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btn_CuentaCreada.setForeground(new java.awt.Color(0, 0, 0));
         btn_CuentaCreada.setText("crear cuenta");
+        btn_CuentaCreada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CuentaCreadaActionPerformed(evt);
+            }
+        });
 
         btn_Volver.setBackground(new java.awt.Color(87, 165, 243));
         btn_Volver.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
@@ -77,12 +82,6 @@ public class V_NuevaCuenta extends javax.swing.JFrame {
         btn_Volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_VolverActionPerformed(evt);
-            }
-        });
-
-        txt_Genero.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_GeneroKeyTyped(evt);
             }
         });
 
@@ -188,17 +187,18 @@ public class V_NuevaCuenta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txt_EdadKeyTyped
 
+    private void btn_CuentaCreadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CuentaCreadaActionPerformed
+       if(txt_Nombre.getText().equals("")||txt_Genero.getText().equals("")||txt_Username.getText().equals("")||txt_Edad.getText().equals("")||txt_password.getText().equals("")||txt_Verificacion_pasword.getText().equals("")){
+       JOptionPane.showMessageDialog(null,"Error,debe llenar todo los campos");
+       }
+       
+       
+    }//GEN-LAST:event_btn_CuentaCreadaActionPerformed
+
     private void btn_VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VolverActionPerformed
       
+      dispose();
     }//GEN-LAST:event_btn_VolverActionPerformed
-
-    private void txt_GeneroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_GeneroKeyTyped
-    
-       
-       
-        
-       
-    }//GEN-LAST:event_txt_GeneroKeyTyped
 
   
 
